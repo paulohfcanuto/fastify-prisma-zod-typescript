@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug API",
+      "runtimeExecutable": "dotenvx",
+      "runtimeArgs": [
+        "run",
+        "-f",
+        ".env.local",
+        "--",
+        "${workspaceFolder}/node_modules/.bin/tsx",
+        "src/main/server.ts"
+      ],
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal"
+    }
+  ]
+} 

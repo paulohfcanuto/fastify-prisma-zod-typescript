@@ -6,7 +6,12 @@ export class UserService {
 
   async createUser(data: CreateUserInput): Promise<User> {
     return this.prisma.user.create({
-      data
+      data: {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        dob: new Date(data.dob),
+        sex: data.sex
+      }
     });
   }
 
@@ -27,4 +32,4 @@ export class UserService {
       total
     };
   }
-} 
+}

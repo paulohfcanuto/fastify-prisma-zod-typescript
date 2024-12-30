@@ -37,7 +37,7 @@ model User {
   id        String   @id @default(uuid()) @db.Uuid
   firstName String   @map("first_name")
   lastName  String   @map("last_name")
-  dob       DateTime @map("date_of_birth")
+  dob       DateTime @map("date_of_birth") @db.Date
   sex       Sex
   todos     Todo[]
   createdAt DateTime @default(now()) @map("created_at")

@@ -10,7 +10,10 @@ export class UserController {
     reply: FastifyReply
   ) {
     const user = await this.userService.createUser(request.body);
-    return reply.code(201).send(user);
+    return reply.code(201).send({
+      ...user,
+      dob: user.dob.toISOString().split('T')[0]
+    });
   }
 
   async getUsers(
@@ -19,7 +22,10 @@ export class UserController {
   ) {
     const result = await this.userService.getUsers(request.query);
     return reply.send({
-      data: result.users,
+      data: result.users.map(user => ({
+        ...user,
+        dob: user.dob.toISOString().split('T')[0]
+      })),
       meta: {
         total: result.total,
         page: request.query.page,
@@ -28,4 +34,4 @@ export class UserController {
       }
     });
   }
-} 
+}

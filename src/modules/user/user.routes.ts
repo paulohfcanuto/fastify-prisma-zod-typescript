@@ -38,4 +38,4 @@ export default class UserRoutes implements IRoute {
       this.controller.getUsers.bind(this.controller)
     );
   }
-} 
+}

@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "dotenvx run -f .env.local -- tsx watch src/main/server.ts",
     "build": "tsc",
-    "start": "node dist/main/server.js",
     "prisma:generate": "dotenvx run -f .env.local -- prisma generate",
     "prisma:migrate": "dotenvx run -f .env.local -- prisma migrate dev",
     "prisma:studio": "dotenvx run -f .env.local -- prisma studio"

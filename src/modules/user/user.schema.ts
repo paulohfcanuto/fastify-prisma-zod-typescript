@@ -3,14 +3,20 @@ import { z } from 'zod';
 export const createUserSchema = z.object({
   firstName: z.string().min(2),
   lastName: z.string().min(2),
-  dob: z.string().datetime(),
+  dob: z.string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, "Date must be in YYYY-MM-DD format")
+    .refine((date) => !isNaN(Date.parse(date)), "Invalid date"),
   sex: z.enum(['MALE', 'FEMALE'])
 });
 
-export const userResponseSchema = createUserSchema.extend({
+export const userResponseSchema = z.object({
   id: z.string().uuid(),
-  createdAt: z.string().datetime(),
-  updatedAt: z.string().datetime()
+  firstName: z.string(),
+  lastName: z.string(),
+  dob: z.date(),
+  sex: z.enum(['MALE', 'FEMALE']),
+  createdAt: z.date(),
+  updatedAt: z.date()
 });
 
 export const paginationQuerySchema = z.object({
@@ -20,4 +26,4 @@ export const paginationQuerySchema = z.object({
 
 export type CreateUserInput = z.infer<typeof createUserSchema>;
 export type UserResponse = z.infer<typeof userResponseSchema>;
-export type PaginationQuery = z.infer<typeof paginationQuerySchema>; 
+export type PaginationQuery = z.infer<typeof paginationQuerySchema>;
