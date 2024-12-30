@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "dotenvx run -f .env.local -- tsx watch src/main/server.ts",
+    "dev": "dotenvx run -f .env.local -- tsx watch src/main/app-bootstrap.ts",
     "build": "tsc",
     "prisma:generate": "dotenvx run -f .env.local -- prisma generate",
     "prisma:migrate": "dotenvx run -f .env.local -- prisma migrate dev",

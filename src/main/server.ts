@@ -3,8 +3,8 @@ import cors from '@fastify/cors';
 import swagger from '@fastify/swagger';
 import swaggerUi from '@fastify/swagger-ui';
 import { PrismaClient } from '@prisma/client';
-import { RouteRegistry } from '../shared/registry/route.registry';
-import { ModuleLoader } from '../shared/loaders/module.loader';
+import { RouteRegistry } from '../common/registry/route.registry';
+import { ModuleLoader } from '../common/loaders/module.loader';
 
 export class Server {
   private app: FastifyInstance;
@@ -62,7 +62,7 @@ export class Server {
     this.app.get('/health', async () => {
       return { status: 'ok' };
     });
-    
+
     // Register all module routes
     await RouteRegistry.registerAll(this.app);
   }
@@ -81,7 +81,3 @@ export class Server {
     }
   }
 }
-
-// Bootstrap the application
-const server = new Server();
-server.start(); 

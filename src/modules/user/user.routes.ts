@@ -4,7 +4,7 @@ import { UserController } from './user.controller';
 import { UserService } from './user.service';
 import { createUserSchema, userResponseSchema, paginationQuerySchema } from './user.schema';
 import { zodToJsonSchema } from 'zod-to-json-schema';
-import { IRoute } from '../../shared/interfaces/route.interface';
+import { IRoute } from '../../common/interfaces/route.interface';
 
 export default class UserRoutes implements IRoute {
   private controller: UserController;

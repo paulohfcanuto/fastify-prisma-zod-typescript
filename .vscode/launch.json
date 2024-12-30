@@ -12,7 +12,7 @@
         ".env.local",
         "--",
         "${workspaceFolder}/node_modules/.bin/tsx",
-        "src/main/server.ts"
+        "src/main/app-bootstrap.ts"
       ],
       "skipFiles": ["<node_internals>/**"],
       "console": "integratedTerminal"
