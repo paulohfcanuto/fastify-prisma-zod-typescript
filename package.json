@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "dotenvx run -f .env.local -- tsx watch src/main/app-bootstrap.ts",
     "build": "tsc",
-    "prisma:generate": "dotenvx run -f .env.local -- prisma generate",
     "prisma:migrate": "dotenvx run -f .env.local -- prisma migrate dev",
-    "prisma:studio": "dotenvx run -f .env.local -- prisma studio"
+    "prisma:studio": "dotenvx run -f .env.local -- prisma studio",
+    "prisma:generate": "dotenvx run -f .env.local -- prisma generate",
+    "dev": "dotenvx run -f .env.local -- tsx watch src/main/app-bootstrap.ts",
+    "start:dev": "npm run prisma:generate && npm run dev"
   },
   "repository": {
     "type": "git",
