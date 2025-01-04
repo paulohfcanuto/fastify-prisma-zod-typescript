@@ -9,7 +9,6 @@
     "prisma:generate": "dotenvx run -f .env.local -- prisma generate",
     "dev": "dotenvx run -f .env.local -- tsx watch src/main/app-bootstrap.ts",
     "start:dev": "npm run prisma:generate && npm run dev",
-    "version:tag": "chmod +x ./scripts/create-version-tag.sh && ./scripts/create-version-tag.sh",
     "lint": "eslint \"src/**/*.ts\"",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write \"src/**/*.ts\"",
