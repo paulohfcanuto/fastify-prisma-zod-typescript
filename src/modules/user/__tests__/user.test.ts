@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import { afterAll, beforeEach, describe, expect, it } from 'vitest';
-import { cleanTable } from '../../../test/helpers/database';
-import { UserService } from '../user.service';
+import { cleanTable } from '../../../test/helpers/database.ts';
+import { UserService } from '../user.service.ts';
 
 describe('User Module', () => {
   const prisma = new PrismaClient();
@@ -37,7 +37,7 @@ describe('User Module', () => {
 
     it('should list users with pagination', async () => {
       // Create test users
-      const users = await Promise.all([
+      await Promise.all([
         userService.createUser({
           firstName: 'John',
           lastName: 'Doe',

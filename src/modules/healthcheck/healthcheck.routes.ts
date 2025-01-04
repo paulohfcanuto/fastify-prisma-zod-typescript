@@ -1,9 +1,9 @@
-import { PrismaClient } from '@prisma/client';
-import { FastifyInstance } from 'fastify';
+import { type PrismaClient } from '@prisma/client';
+import { type FastifyInstance } from 'fastify';
 import { zodToJsonSchema } from 'zod-to-json-schema';
-import { IRoute } from '../../common/interfaces/route.interface';
-import { HealthcheckResponseSchema } from './healthcheck.schema';
-import { HealthcheckService } from './healthcheck.service';
+import { type IRoute } from '../../common/interfaces/route.interface.ts';
+import { HealthcheckService } from './healthcheck.service.ts';
+import { HealthcheckResponseSchema } from './healthcheck.schema.ts';
 
 export default class HealthcheckRoutes implements IRoute {
   private healthcheckService: HealthcheckService;

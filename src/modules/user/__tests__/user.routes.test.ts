@@ -1,9 +1,9 @@
-import { PrismaClient } from '@prisma/client';
-import { FastifyInstance } from 'fastify';
+import { type PrismaClient } from '@prisma/client';
+import { type FastifyInstance } from 'fastify';
 import { afterAll, beforeEach, describe, expect, it } from 'vitest';
-import { setupTestModule } from '../../../test/helpers/module';
+import { setupTestModule } from '../../../test/helpers/module.ts';
 import supertest from 'supertest';
-import UserRoutes from '../user.routes';
+import UserRoutes from '../user.routes.ts';
 
 describe('User Routes', () => {
   let app: FastifyInstance;

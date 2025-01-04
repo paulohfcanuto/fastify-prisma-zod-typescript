@@ -2,9 +2,9 @@ import cors from '@fastify/cors';
 import swagger from '@fastify/swagger';
 import swaggerUi from '@fastify/swagger-ui';
 import { PrismaClient } from '@prisma/client';
-import fastify, { FastifyInstance } from 'fastify';
-import { ModuleLoader } from '../common/loaders/module.loader';
-import { RouteRegistry } from '../common/registry/route.registry';
+import fastify, { type FastifyInstance } from 'fastify';
+import { ModuleLoader } from '../common/loaders/module.loader.ts';
+import { RouteRegistry } from '../common/registry/route.registry.ts';
 
 export class Server {
   private app: FastifyInstance;

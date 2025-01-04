@@ -1,11 +1,14 @@
-import { FastifyReply, FastifyRequest } from 'fastify';
-import { CreateUserInput, PaginationQuery } from './user.schema';
-import { UserService } from './user.service';
+import { type FastifyReply, type FastifyRequest } from 'fastify';
+import { type CreateUserInput, type PaginationQuery } from './user.schema.ts';
+import { UserService } from './user.service.ts';
 
 export class UserController {
   constructor(private userService: UserService) {}
 
-  async createUser(request: FastifyRequest<{ Body: CreateUserInput }>, reply: FastifyReply) {
+  async createUser(
+    request: FastifyRequest<{ Body: CreateUserInput }>,
+    reply: FastifyReply
+  ): Promise<FastifyReply> {
     const user = await this.userService.createUser(request.body);
     return reply.code(201).send({
       ...user,
@@ -13,7 +16,10 @@ export class UserController {
     });
   }
 
-  async getUsers(request: FastifyRequest<{ Querystring: PaginationQuery }>, reply: FastifyReply) {
+  async getUsers(
+    request: FastifyRequest<{ Querystring: PaginationQuery }>,
+    reply: FastifyReply
+  ): Promise<FastifyReply> {
     const result = await this.userService.getUsers(request.query);
     return reply.send({
       data: result.users.map(user => ({

@@ -1,12 +1,12 @@
 import { PrismaClient } from '@prisma/client';
-import { VERSION } from '../../common/config/version';
+import { VERSION } from '../../common/config/version.ts';
+import { type HealthcheckResponse } from './healthcheck.schema.ts';
 
 export class HealthcheckService {
   constructor(private prisma: PrismaClient) {}
 
-  async check() {
+  async check(): Promise<HealthcheckResponse> {
     try {
-      // Simple query to test DB connection
       await this.prisma.$queryRaw`SELECT 1`;
 
       return {

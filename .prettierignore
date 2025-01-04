@@ -1,0 +1,14 @@
+# Config files
+tsconfig.json
+*.config.js
+*.config.ts
+*.config.cjs
+*.config.mjs
+
+# Package files
+package.json
+package-lock.json
+
+# Other
+.env*
+.gitignore 

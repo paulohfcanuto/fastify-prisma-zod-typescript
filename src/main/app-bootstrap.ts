@@ -1,6 +1,6 @@
-import { Server } from './server';
+import { Server } from './server.ts';
 
-async function bootstrap() {
+async function bootstrap(): Promise<void> {
   const server = new Server();
   await server.start();
 }

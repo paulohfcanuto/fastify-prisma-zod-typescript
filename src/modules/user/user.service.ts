@@ -1,5 +1,5 @@
-import { PrismaClient, User } from '@prisma/client';
-import { CreateUserInput, PaginationQuery } from './user.schema';
+import { type PrismaClient, type User } from '@prisma/client';
+import { type CreateUserInput, type PaginationQuery } from './user.schema.ts';
 
 export class UserService {
   constructor(private prisma: PrismaClient) {}

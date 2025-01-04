@@ -1,5 +1,5 @@
-import { FastifyInstance } from 'fastify';
-import { IRoute } from '../interfaces/route.interface';
+import { type FastifyInstance } from 'fastify';
+import { type IRoute } from '../interfaces/route.interface.ts';
 
 export class RouteRegistry {
   private static routes: IRoute[] = [];

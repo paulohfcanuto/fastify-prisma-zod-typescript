@@ -1,8 +1,8 @@
 import cors from '@fastify/cors';
 import { PrismaClient } from '@prisma/client';
-import { FastifyInstance, fastify } from 'fastify';
-import { IRoute } from '../../common/interfaces/route.interface';
-import { cleanTable } from './database';
+import { type FastifyInstance, fastify } from 'fastify';
+import { type IRoute } from '../../common/interfaces/route.interface.ts';
+import { cleanTable } from './database.ts';
 
 interface SetupModuleOptions {
   tables: string[];
