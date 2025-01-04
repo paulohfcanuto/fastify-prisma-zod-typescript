@@ -45,8 +45,8 @@ export class Server {
     await this.app.register(swagger, {
       swagger: {
         info: {
-          title: 'Todo App API',
-          description: 'Todo App API documentation',
+          title: 'Fastify Prisma Zod Typescript REST API',
+          description: 'Fastify Prisma Zod Typescript REST API documentation',
           version: '1.0.0'
         },
         host: `${this.host}:${this.port}`,
