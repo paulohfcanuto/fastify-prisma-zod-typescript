@@ -18,7 +18,6 @@ model User {
   lastName  String   @map("last_name")
   dob       DateTime @map("date_of_birth") @db.Date
   sex       Sex
-  todos     Todo[]
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 

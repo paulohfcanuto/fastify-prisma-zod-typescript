@@ -10,11 +10,8 @@
     "dev": "dotenvx run -f .env.local -- tsx watch src/main/app-bootstrap.ts",
     "start:dev": "npm run prisma:generate && npm run dev",
     "lint": "eslint \"src/**/*.ts\"",
-    "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write \"src/**/*.ts\"",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "npm run prisma:generate && dotenvx run -f .env.local -- vitest run --coverage"
   },
   "repository": {
     "type": "git",
