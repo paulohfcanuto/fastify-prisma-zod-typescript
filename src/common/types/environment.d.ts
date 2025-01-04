@@ -6,6 +6,10 @@ declare global {
       SERVER_HOST: string;
       NODE_ENV: 'development' | 'production' | 'test';
 
+      // Version Configuration
+      VERSION: string;
+      API_VERSION: string;
+
       // Database Configuration
       DATABASE_URL: string;
       DATABASE_POOL_SIZE: string;
@@ -15,7 +19,6 @@ declare global {
       JWT_EXPIRES_IN: string;
 
       // API Configuration
-      API_VERSION: string;
       API_PORT: string;
 
       // External Services
@@ -30,4 +33,4 @@ declare global {
   }
 }
 
-export {}; 
+export {};

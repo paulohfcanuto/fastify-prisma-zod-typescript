@@ -1,14 +1,15 @@
 {
   "name": "todo-app-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/main/app-bootstrap.ts",
   "scripts": {
     "build": "tsc",
     "prisma:migrate": "dotenvx run -f .env.local -- prisma migrate dev",
     "prisma:studio": "dotenvx run -f .env.local -- prisma studio",
     "prisma:generate": "dotenvx run -f .env.local -- prisma generate",
     "dev": "dotenvx run -f .env.local -- tsx watch src/main/app-bootstrap.ts",
-    "start:dev": "npm run prisma:generate && npm run dev"
+    "start:dev": "npm run prisma:generate && npm run dev",
+    "version:tag": "chmod +x ./scripts/create-version-tag.sh && ./scripts/create-version-tag.sh"
   },
   "repository": {
     "type": "git",

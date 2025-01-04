@@ -13,4 +13,4 @@ export class RouteRegistry {
       await route.register(app);
     }
   }
-} 
+}

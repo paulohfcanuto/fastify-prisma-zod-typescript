@@ -1,6 +1,6 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { UserService } from './user.service';
 import { CreateUserInput, PaginationQuery } from './user.schema';
+import { UserService } from './user.service';
 
 export class UserController {
   constructor(private userService: UserService) {}

@@ -1,10 +1,10 @@
-import { FastifyInstance } from 'fastify';
 import { PrismaClient } from '@prisma/client';
-import { UserController } from './user.controller';
-import { UserService } from './user.service';
-import { createUserSchema, userResponseSchema, paginationQuerySchema } from './user.schema';
+import { FastifyInstance } from 'fastify';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import { IRoute } from '../../common/interfaces/route.interface';
+import { UserController } from './user.controller';
+import { createUserSchema, paginationQuerySchema, userResponseSchema } from './user.schema';
+import { UserService } from './user.service';
 
 export default class UserRoutes implements IRoute {
   private controller: UserController;

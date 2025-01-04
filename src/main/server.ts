@@ -1,10 +1,10 @@
-import fastify, { FastifyInstance } from 'fastify';
 import cors from '@fastify/cors';
 import swagger from '@fastify/swagger';
 import swaggerUi from '@fastify/swagger-ui';
 import { PrismaClient } from '@prisma/client';
-import { RouteRegistry } from '../common/registry/route.registry';
+import fastify, { FastifyInstance } from 'fastify';
 import { ModuleLoader } from '../common/loaders/module.loader';
+import { RouteRegistry } from '../common/registry/route.registry';
 
 export class Server {
   private app: FastifyInstance;
@@ -58,11 +58,6 @@ export class Server {
   }
 
   private async registerRoutes(): Promise<void> {
-    // Health check
-    this.app.get('/health', async () => {
-      return { status: 'ok' };
-    });
-
     // Register all module routes
     await RouteRegistry.registerAll(this.app);
   }
