@@ -9,7 +9,10 @@
     "prisma:generate": "dotenvx run -f .env.local -- prisma generate",
     "dev": "dotenvx run -f .env.local -- tsx watch src/main/app-bootstrap.ts",
     "start:dev": "npm run prisma:generate && npm run dev",
-    "version:tag": "chmod +x ./scripts/create-version-tag.sh && ./scripts/create-version-tag.sh"
+    "version:tag": "chmod +x ./scripts/create-version-tag.sh && ./scripts/create-version-tag.sh",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -36,10 +39,13 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
-    "@typescript-eslint/eslint-plugin": "^8.18.2",
-    "@typescript-eslint/parser": "^8.18.2",
+    "@typescript-eslint/eslint-plugin": "^8.19.0",
+    "@typescript-eslint/parser": "^8.19.0",
     "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "pino-pretty": "^10.3.1",
+    "prettier": "^3.4.2",
     "prisma": "^6.1.0",
     "tsx": "^4.7.1",
     "typescript": "^5.7.2"
