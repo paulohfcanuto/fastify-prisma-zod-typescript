@@ -10,7 +10,6 @@ on:
         type: choice
         options:
           - test
-          - development
 
 jobs:
   quality:
@@ -18,11 +17,11 @@ jobs:
 
     services:
       postgres:
-        image: postgres:latest
+        image: postgres:16
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: admin
-          POSTGRES_DB: todo_app
+          POSTGRES_DB: fastify_app
         ports:
           - 5432:5432
         options: >-
@@ -46,12 +45,12 @@ jobs:
       - name: Generate Prisma Client
         run: npm run prisma:generate
         env:
-          DATABASE_URL: postgresql://postgres:admin@localhost:5432/todo_app?schema=public
+          DATABASE_URL: postgresql://postgres:admin@localhost:5432/fastify_app?schema=public
 
       - name: Run Prisma Migrations
         run: npx prisma migrate deploy
         env:
-          DATABASE_URL: postgresql://postgres:admin@localhost:5432/todo_app?schema=public
+          DATABASE_URL: postgresql://postgres:admin@localhost:5432/fastify_app?schema=public
 
       - name: Run ESLint
         run: npm run lint
@@ -62,7 +61,7 @@ jobs:
       - name: Run tests with coverage
         run: npm run test:coverage
         env:
-          DATABASE_URL: postgresql://postgres:admin@localhost:5432/todo_app?schema=public
+          DATABASE_URL: postgresql://postgres:admin@localhost:5432/fastify_app?schema=public
           NODE_ENV: test
 
       - name: Upload coverage reports

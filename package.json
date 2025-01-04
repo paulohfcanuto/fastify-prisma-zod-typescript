@@ -11,7 +11,7 @@
     "start:dev": "npm run prisma:generate && npm run dev",
     "lint": "eslint \"src/**/*.ts\"",
     "format": "prettier --write \"src/**/*.ts\"",
-    "test:coverage": "npm run prisma:generate && dotenvx run -f .env.local -- vitest run --coverage"
+    "test:coverage": "npm run prisma:generate && vitest run --coverage"
   },
   "repository": {
     "type": "git",

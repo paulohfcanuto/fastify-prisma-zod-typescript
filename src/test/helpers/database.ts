@@ -7,3 +7,5 @@ export async function cleanTable(tables: string[]): Promise<void> {
     await prisma.$executeRawUnsafe(`TRUNCATE TABLE "${table}" CASCADE`);
   }
 }
+
+export { prisma };
