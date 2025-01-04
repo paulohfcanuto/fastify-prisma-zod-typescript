@@ -6,7 +6,7 @@
 
 Create a file called .env.local
 
-```
+```env
 # Server Configuration
 SERVER_PORT=3000
 SERVER_HOST="0.0.0.0"
@@ -20,24 +20,18 @@ DATABASE_POOL_SIZE=20
 API_VERSION="v1"
 API_PORT=8080
 
-# External Services
-REDIS_URL="redis://localhost:6379"
-AWS_ACCESS_KEY="your-access-key"
-AWS_SECRET_KEY="your-secret-key"
-AWS_REGION="us-east-1"
-
 # Logging
 LOG_LEVEL="debug"
 ```
 
 Install npm dependencies:
 
-```
+```bash
 npm install
 ```
 
 ### 2. Run the server
 
-```
+```bash
 npm run start:dev
 ```
