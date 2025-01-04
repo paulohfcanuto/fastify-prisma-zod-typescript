@@ -1,6 +1,6 @@
 {
-  "name": "todo-app-backend",
-  "version": "1.0.0",
+  "name": "fastify-prisma-zod-typescript",
+  "version": "0.0.1",
   "main": "src/main/app-bootstrap.ts",
   "scripts": {
     "build": "tsc",
@@ -18,17 +18,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paulohfcanuto/todo-app-backend.git"
+    "url": "git+https://github.com/paulohfcanuto/fastify-prisma-zod-typescript.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "fastify",
+    "prisma",
+    "zod",
+    "typescript",
+    "backend"
+  ],
+  "author": "Paulo Canuto",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/paulohfcanuto/todo-app-backend/issues"
+    "url": "https://github.com/paulohfcanuto/fastify-prisma-zod-typescript/issues"
   },
-  "homepage": "https://github.com/paulohfcanuto/todo-app-backend#readme",
-  "description": "",
+  "homepage": "https://github.com/paulohfcanuto/fastify-prisma-zod-typescript#readme",
+  "description": "A study project showcasing Fastify, Prisma, Zod, and TypeScript integration",
   "dependencies": {
     "@dotenvx/dotenvx": "^1.32.0",
     "@fastify/cors": "^10.0.1",
