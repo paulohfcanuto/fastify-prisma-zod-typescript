@@ -21,11 +21,13 @@
     "url": "git+https://github.com/paulohfcanuto/fastify-prisma-zod-typescript.git"
   },
   "keywords": [
-    "fastify",
-    "prisma",
+    "Fastify",
+    "Prisma",
     "zod",
-    "typescript",
-    "backend"
+    "Typescript",
+    "Backend",
+    "NodeNext",
+    "ES2022"
   ],
   "author": "Paulo Canuto",
   "license": "ISC",
