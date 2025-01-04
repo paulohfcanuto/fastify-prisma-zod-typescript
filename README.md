@@ -1,4 +1,4 @@
-# REST API with Prisma Zod and Fastify
+# REST API with Prisma Zod Fastify and Typescript
 
 ## Getting started
 
