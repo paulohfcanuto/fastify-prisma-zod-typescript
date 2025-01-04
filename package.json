@@ -6,7 +6,7 @@
     "build": "tsc",
     "prisma:migrate": "dotenvx run -f .env.local -- prisma migrate dev",
     "prisma:studio": "dotenvx run -f .env.local -- prisma studio",
-    "prisma:generate": "dotenvx run -f .env.local -- prisma generate",
+    "prisma:generate": "prisma generate",
     "dev": "dotenvx run -f .env.local -- tsx watch src/main/app-bootstrap.ts",
     "start:dev": "npm run prisma:generate && npm run dev",
     "lint": "eslint \"src/**/*.ts\"",
