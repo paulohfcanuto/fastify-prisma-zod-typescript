@@ -35,3 +35,9 @@ npm install
 ```bash
 npm run start:dev
 ```
+
+### 3. Run the tests
+
+```bash
+npm run test:coverage
+```
