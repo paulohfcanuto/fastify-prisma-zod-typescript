@@ -12,27 +12,6 @@ enum Sex {
   FEMALE
 }
 
-enum TodoStatus {
-  PENDING
-  IN_PROGRESS
-  COMPLETED
-}
-
-model Todo {
-  id          String     @id @default(uuid()) @db.Uuid
-  title       String
-  description String?
-  status      TodoStatus @default(PENDING)
-  dueDate     DateTime?  @map("due_date")
-  reminder    DateTime?
-  userId      String     @map("user_id") @db.Uuid
-  user        User       @relation(fields: [userId], references: [id])
-  createdAt   DateTime   @default(now()) @map("created_at")
-  updatedAt   DateTime   @updatedAt @map("updated_at")
-
-  @@map("todos")
-}
-
 model User {
   id        String   @id @default(uuid()) @db.Uuid
   firstName String   @map("first_name")
