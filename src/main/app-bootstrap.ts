@@ -5,7 +5,7 @@ async function bootstrap() {
   await server.start();
 }
 
-bootstrap().catch((error) => {
+bootstrap().catch(error => {
   console.error('Error bootstrapping application:', error);
   process.exit(1);
 });

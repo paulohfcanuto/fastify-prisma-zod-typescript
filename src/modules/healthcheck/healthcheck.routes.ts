@@ -13,15 +13,19 @@ export default class HealthcheckRoutes implements IRoute {
   }
 
   async register(app: FastifyInstance): Promise<void> {
-    app.get('/health', {
-      schema: {
-        response: {
-          200: zodToJsonSchema(HealthcheckResponseSchema)
-        },
-        description: 'Health check endpoint that verifies the API and database status'
+    app.get(
+      '/health',
+      {
+        schema: {
+          response: {
+            200: zodToJsonSchema(HealthcheckResponseSchema)
+          },
+          description: 'Health check endpoint that verifies the API and database status'
+        }
+      },
+      async () => {
+        return this.healthcheckService.check();
       }
-    }, async () => {
-      return this.healthcheckService.check();
-    });
+    );
   }
 }

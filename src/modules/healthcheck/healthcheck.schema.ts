@@ -6,7 +6,7 @@ export const HealthcheckResponseSchema = z.object({
   apiVersion: z.string(),
   timestamp: z.string(),
   database: z.string(),
-  error: z.string().nullable().optional(),
+  error: z.string().nullable().optional()
 });
 
 export type HealthcheckResponse = z.infer<typeof HealthcheckResponseSchema>;

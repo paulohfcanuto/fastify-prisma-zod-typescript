@@ -18,8 +18,12 @@ export class Server {
         level: process.env.LOG_LEVEL || 'info',
         transport: {
           target: 'pino-pretty',
-        },
-      },
+          options: {
+            colorize: true,
+            translateTime: true
+          }
+        }
+      }
     });
     this.port = Number(process.env.SERVER_PORT) || 3000;
     this.host = process.env.SERVER_HOST || '0.0.0.0';
@@ -34,7 +38,7 @@ export class Server {
     // Register CORS
     await this.app.register(cors, {
       origin: true, // Replace with your frontend URL in production
-      credentials: true,
+      credentials: true
     });
 
     // Register Swagger
@@ -43,17 +47,17 @@ export class Server {
         info: {
           title: 'Todo App API',
           description: 'Todo App API documentation',
-          version: '1.0.0',
+          version: '1.0.0'
         },
         host: `${this.host}:${this.port}`,
         schemes: ['http'],
         consumes: ['application/json'],
-        produces: ['application/json'],
-      },
+        produces: ['application/json']
+      }
     });
 
     await this.app.register(swaggerUi, {
-      routePrefix: '/documentation',
+      routePrefix: '/documentation'
     });
   }
 

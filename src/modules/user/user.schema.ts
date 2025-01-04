@@ -3,9 +3,10 @@ import { z } from 'zod';
 export const createUserSchema = z.object({
   firstName: z.string().min(2),
   lastName: z.string().min(2),
-  dob: z.string()
-    .regex(/^\d{4}-\d{2}-\d{2}$/, "Date must be in YYYY-MM-DD format")
-    .refine((date) => !isNaN(Date.parse(date)), "Invalid date"),
+  dob: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, 'Date must be in YYYY-MM-DD format')
+    .refine(date => !isNaN(Date.parse(date)), 'Invalid date'),
   sex: z.enum(['MALE', 'FEMALE'])
 });
 

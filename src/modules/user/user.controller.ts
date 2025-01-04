@@ -5,10 +5,7 @@ import { UserService } from './user.service';
 export class UserController {
   constructor(private userService: UserService) {}
 
-  async createUser(
-    request: FastifyRequest<{ Body: CreateUserInput }>,
-    reply: FastifyReply
-  ) {
+  async createUser(request: FastifyRequest<{ Body: CreateUserInput }>, reply: FastifyReply) {
     const user = await this.userService.createUser(request.body);
     return reply.code(201).send({
       ...user,
@@ -16,10 +13,7 @@ export class UserController {
     });
   }
 
-  async getUsers(
-    request: FastifyRequest<{ Querystring: PaginationQuery }>,
-    reply: FastifyReply
-  ) {
+  async getUsers(request: FastifyRequest<{ Querystring: PaginationQuery }>, reply: FastifyReply) {
     const result = await this.userService.getUsers(request.query);
     return reply.send({
       data: result.users.map(user => ({
