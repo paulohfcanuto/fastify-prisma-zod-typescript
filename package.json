@@ -12,7 +12,10 @@
     "version:tag": "chmod +x ./scripts/create-version-tag.sh && ./scripts/create-version-tag.sh",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
-    "format": "prettier --write \"src/**/*.ts\""
+    "format": "prettier --write \"src/**/*.ts\"",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage"
   },
   "repository": {
     "type": "git",
@@ -39,15 +42,19 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
+    "@types/supertest": "^6.0.2",
     "@typescript-eslint/eslint-plugin": "^8.19.0",
     "@typescript-eslint/parser": "^8.19.0",
+    "@vitest/coverage-v8": "^2.1.8",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "pino-pretty": "^10.3.1",
     "prettier": "^3.4.2",
     "prisma": "^6.1.0",
+    "supertest": "^7.0.0",
     "tsx": "^4.7.1",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
   }
 }
