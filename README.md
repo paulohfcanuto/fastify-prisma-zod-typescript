@@ -13,7 +13,7 @@ SERVER_HOST="0.0.0.0"
 NODE_ENV="development"
 
 # Database Configuration
-DATABASE_URL=postgresql://postgres:admin@0.0.0.0:5432/todo_app?schema=public
+DATABASE_URL=postgresql://postgres:admin@0.0.0.0:5432/fastify_app?schema=public
 DATABASE_POOL_SIZE=20
 
 # API Configuration
